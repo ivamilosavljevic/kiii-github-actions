@@ -48,4 +48,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ivamilosavljevic/kiii-demo-01:latest
+          tags: ivamilosavljevic/kiii-github-actions:latest
