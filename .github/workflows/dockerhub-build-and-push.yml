@@ -17,8 +17,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/kiii-github-actions
-
-      - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/kiii-github-actions
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ivamilosavljevic/kiii-github-actions:latest
